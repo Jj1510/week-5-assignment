@@ -1,0 +1,7 @@
+CREATE DATABASE target_db;
+USE target_db;
+
+SHOW TABLES IN source_db;
+
+-- For each table in source_db
+CREATE TABLE target_db.table_name AS SELECT * FROM source_db.table_name;
