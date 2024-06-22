@@ -1,0 +1,11 @@
+CREATE TABLE target_db.new_table AS
+SELECT column1, column2, column3
+FROM source_db.existing_table;
+
+import pandas as pd
+
+# Read specific columns from a table
+data = pd.read_sql('SELECT column1, column2, column3 FROM source_table', connection)
+
+# Write to the target table
+data.to_sql('target_table', target_connection, if_exists='replace', index=False)
